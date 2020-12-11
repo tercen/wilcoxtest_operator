@@ -1,28 +1,38 @@
 {
-  "name": "Template R operator",
-  "description": "Return the medium value of a cell",
-  "tags": ["template"],
+  "name": "Wilcoxon test",
+  "description": "Wilcoxon Rank Sum and Signed Rank Tests",
+  "tags": ["statistical testing", "test"],
   "authors": ["tercen"],
-  "urls": ["https://github.com/tercen/template_R_operator"],
+  "urls": ["https://github.com/tercen/wilcoxtest_operator"],
   "properties": [
-   {
-    "kind": "StringProperty",
-    "name": "string_example",
-    "defaultValue": "example",
-    "description": "description parameter 1"
-    },
     {
     "kind": "EnumeratedProperty",
-    "name": "list_example",
-    "defaultValue": "value1",
+    "name": "alternative",
+    "defaultValue": "two.sided",
     "values": [
-      "value1",
-      "StringProperty",
-      "DoubleProperty",
-      "BooleanProperty",
-      "EnumeratedProperty"
+      "two.sided",
+      "less",
+      "greater"
     ],
-    "description": "description parameter 2"
+    "description": "A character string specifying the alternative hypothesis."
+  },
+  {
+    "kind": "BooleanProperty",
+    "name": "paired",
+    "defaultValue": false,
+    "description": "A logical variable indicating whether the observations are paired. If true, a label is expected from the Tercen projection to assign the pairs."
+  },
+  {
+    "kind": "DoubleProperty",
+    "name": "mu",
+    "defaultValue": 0.0,
+    "description": "A number indicating the true value of the mean (or difference in means if you are performing a two sample test)"
+  },
+  {
+    "kind": "DoubleProperty",
+    "name": "conf.level",
+    "defaultValue": 0.95,
+    "description": "Confidence level of the interval."
   }
   ]
 }

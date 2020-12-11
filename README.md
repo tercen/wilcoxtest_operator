@@ -1,50 +1,36 @@
-# Template R operator
-
-The `Template R operator` is a template repository for the creation of R operators in Tercen. An overview of steps for developing an operator are:
-
-1. create a github repo
-2. install tercen_studio
-3. login to tercen_studio
-4. git clone the newly created repo
-5. start developing in R in tercen_studio
-6. add R packages to the repo
-7. push to the github repo
-8. go to tercen and install the operator
-
-More information can be found in [Tercen app builder's guide](https://tercen.github.io/appbuilders-guide/).
-
-Below is the operator README standard structure:
+# Wilcoxon test operator
 
 ##### Description
 
-The `Template R operator` is a template repository for the creation of R operators in Tercen.
+The `wilcoxtest` operator performs a Wilcoxon test on the data.
 
 ##### Usage
 
 Input projection|.
 ---|---
-`x-axis`        | type, description 
-`y-axis`        | type, description 
-`row`           | type, description 
-`column`        | type, description 
-`colors`        | type, description 
-`labels`        | type, description 
+`color`   | represents the groups to compare
+`y-axis`| measurement value
+`labels`   | represents the pairing
 
 Input parameters|.
 ---|---
-`input_var`        | parameter description
+`alternative`   | A character string specifying the alternative hypothesis, default is "two.sided"
+`paired`   | logical, indicating whether to perform pairing, default FALSE
+`mu`  | A number indicating the true value of the mean (or difference in means if you are performing a two sample test), default 0.0
+`conf.level`  |numeric, confidence level of the interval, default 0.95
 
 Output relations|.
 ---|---
-`output_var`        | output relation
-`Operator view`        | view of the Shiny application
+`pv`| numeric, p-value calculated per cell
 
 ##### Details
 
-Details on the computation.
+The operator is the `wilcox.test` function in base R.
+
+##### References
+
+see the `base::wilcox.test` function of the R package for the documentation. 
 
 ##### See Also
 
-[template_shiny_operator](https://github.com/tercen/template_shiny_operator)
-, [template_docker_operator](https://github.com/tercen/template_docker_operator)
-
+[kruskaltest](https://github.com/tercen/kruskaltest_operator), [ttest](https://github.com/tercen/ttest_operator)
