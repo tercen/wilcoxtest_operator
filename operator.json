@@ -29,7 +29,7 @@
     "description": "A number indicating the true value of the mean (or difference in means if you are performing a two sample test)"
   },
   {
-    "kind": "DoubleProperty",
+    "kind": "BooleanProperty",
     "name": "conf.int",
     "defaultValue": true,
     "description": "Compute confidence intervals"
