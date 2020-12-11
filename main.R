@@ -16,7 +16,7 @@ do.wilcoxtest = function(df, ...) {
     p.value = result$p.value
     statistic = result$statistic
     parameter = result$parameter
-    if(is.null(parameter)) parameter = NA
+    if(is.null(parameter)) parameter = NaN
   } 
   return (data.frame(.ri = df$.ri[1], .ci = df$.ci[1],
                      statistic = c(statistic), parameter = c(parameter), p.value = c(p.value)))
@@ -30,16 +30,27 @@ if(as.logical(ctx$op.value('paired'))) {
   if (length(ctx$labels) < 1) stop("Labels are required for a paired test.")
 }
 
+alternative <- "two.sided"
+if(!is.null(ctx$op.value('alternative'))) alternative <- ctx$op.value('alternative')
+mu <- 0.0
+if(!is.null(ctx$op.value('mu'))) mu <- as.double(ctx$op.value('mu'))
+paired <- FALSE
+if(!is.null(ctx$op.value('paired'))) paired <- as.logical(ctx$op.value('paired'))
+conf.int <- TRUE
+if(!is.null(ctx$op.value('conf.int'))) conf.int <-as.logical(ctx$op.value('conf.int'))
+conf.level <- 0.95
+if(!is.null(ctx$op.value('conf.level'))) conf.level <- as.double(ctx$op.value('conf.level'))
+
 df <- ctx %>% 
   select(.ci, .ri, .y) %>%
   mutate(.group.colors = do.call(function(...) paste(..., sep='.'), ctx$select(ctx$colors)),
          .group.labels = do.call(function(...) paste(..., sep='.'), ctx$select(ctx$labels))) %>%
   group_by(.ci, .ri) %>%
   do(do.wilcoxtest(., 
-                   alternative = ctx$op.value('alternative'),
-                   mu = as.double(ctx$op.value('mu')),
-                   paired = as.logical(ctx$op.value('paired')),
-                   conf.int = as.logical(ctx$op.value('conf.int')),
-                   conf.level = as.double(ctx$op.value('conf.level')))) %>%
+                   alternative = alternative,
+                   mu = mu,
+                   paired = paired,
+                   conf.int = conf.int,
+                   conf.level = conf.level)) %>%
   ctx$addNamespace() %>%
   ctx$save()
