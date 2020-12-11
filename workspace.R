@@ -43,7 +43,7 @@ df <- ctx %>%
                    alternative = ctx$op.value('alternative'),
                    mu = as.double(ctx$op.value('mu')),
                    paired = as.logical(ctx$op.value('paired')),
-                   conf.int = TRUE,
+                   conf.int = as.logical(ctx$op.value('conf.int')),
                    conf.level = as.double(ctx$op.value('conf.level')))) %>%
   ctx$addNamespace() %>%
   ctx$save()

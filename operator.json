@@ -30,6 +30,12 @@
   },
   {
     "kind": "DoubleProperty",
+    "name": "conf.int",
+    "defaultValue": true,
+    "description": "Compute confidence intervals"
+  },
+  {
+    "kind": "DoubleProperty",
     "name": "conf.level",
     "defaultValue": 0.95,
     "description": "Confidence level of the interval."

@@ -36,10 +36,10 @@ df <- ctx %>%
          .group.labels = do.call(function(...) paste(..., sep='.'), ctx$select(ctx$labels))) %>%
   group_by(.ci, .ri) %>%
   do(do.wilcoxtest(., 
-              alternative = ctx$op.value('alternative'),
-              mu = as.double(ctx$op.value('mu')),
-              paired = as.logical(ctx$op.value('paired')),
-              conf.int = TRUE,
-              conf.level = as.double(ctx$op.value('conf.level')))) %>%
+                   alternative = ctx$op.value('alternative'),
+                   mu = as.double(ctx$op.value('mu')),
+                   paired = as.logical(ctx$op.value('paired')),
+                   conf.int = as.logical(ctx$op.value('conf.int')),
+                   conf.level = as.double(ctx$op.value('conf.level')))) %>%
   ctx$addNamespace() %>%
   ctx$save()
