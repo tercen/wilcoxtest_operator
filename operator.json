@@ -1,6 +1,6 @@
 {
-  "name": "Wilcoxon test",
-  "description": "Wilcoxon Rank Sum and Signed Rank Tests",
+  "name": "Wilcoxon Test",
+  "description": "Calculates the difference between sets of pairs and analyzes these differences to establish if they are statistically significantly different from one another. There are two variants Rank Sum and Signed Rank.",
   "tags": ["statistical testing", "test"],
   "authors": ["tercen"],
   "urls": ["https://github.com/tercen/wilcoxtest_operator"],
