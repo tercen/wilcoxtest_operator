@@ -1,8 +1,8 @@
 library(tercen)
 library(dplyr)
 
-options("tercen.workflowId" = "d330322c43363eb4f9b27738ef0042b9")
-options("tercen.stepId"     = "0267186b-309e-4c40-babd-6f5139f52a6c")
+options("tercen.workflowId" = "60c29fd8e92453bb7db15f2c1d023dd2")
+options("tercen.stepId"     = "c2f61347-be02-456e-adb3-7a0fcdde0c88")
 
 do.wilcoxtest = function(df, ...) {
   p.value = NaN

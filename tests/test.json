@@ -1,0 +1,13 @@
+{
+  "kind": "OperatorUnitTest",
+  "name": "Wilcoxon test",
+  "namespace": "ds0",
+  "inputDataUri": "c06_super_2group_control.tsv",
+  "outputDataUri": ["table1.csv","table2.csv"],
+  "columns": ["Supergroup"],
+  "rows": [],
+  "colors": ["Group"],
+  "labels": ["Pair"],
+  "yAxis": "Measurement",
+  "xAxis": ""
+  }
