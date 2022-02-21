@@ -2,7 +2,7 @@
   "kind": "OperatorUnitTest",
   "name": "Wilcoxon test",
   "namespace": "ds0",
-  "inputDataUri": "2groups_super_pairing_control_exp.tsv",
+  "inputDataUri": "2groups_super_pairing_control_exp.csv",
   "outputDataUri": ["table1.csv","table2.csv"],
   "columns": ["Supergroup"],
   "rows": [],
