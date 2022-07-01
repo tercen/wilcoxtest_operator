@@ -1,8 +1,9 @@
 library(tercen)
 library(dplyr)
 
-options("tercen.workflowId" = "60c29fd8e92453bb7db15f2c1d023dd2")
-options("tercen.stepId"     = "c2f61347-be02-456e-adb3-7a0fcdde0c88")
+library(tim)
+options("tercen.workflowId" = "6015a4dd34cef273755e1a1b1500427b")
+options("tercen.stepId"     = "c51e5178-b2ae-4bda-80c5-ab8ed2c1edff")
 
 do.wilcoxtest = function(df, ...) {
   p.value = NaN
@@ -44,7 +45,7 @@ if(!is.null(ctx$op.value('conf.int'))) conf.int <-as.logical(ctx$op.value('conf.
 conf.level <- 0.95
 if(!is.null(ctx$op.value('conf.level'))) conf.level <- as.double(ctx$op.value('conf.level'))
 
-df <- ctx %>% 
+df.out <- ctx %>% 
   select(.ci, .ri, .y) %>%
   mutate(.group.colors = do.call(function(...) paste(..., sep='.'), ctx$select(ctx$colors)),
          .group.labels = do.call(function(...) paste(..., sep='.'), ctx$select(ctx$labels))) %>%
@@ -55,5 +56,9 @@ df <- ctx %>%
                    paired = paired,
                    conf.int = conf.int,
                    conf.level = conf.level)) %>%
-  ctx$addNamespace() %>%
+  ctx$addNamespace()
+
+df.out%>%
   ctx$save()
+
+tim::build_test_data(res_table = df.out, ctx = ctx, test_name = "test1")
