@@ -41,7 +41,7 @@ if(!is.null(ctx$op.value('conf.int'))) conf.int <-as.logical(ctx$op.value('conf.
 conf.level <- 0.95
 if(!is.null(ctx$op.value('conf.level'))) conf.level <- as.double(ctx$op.value('conf.level'))
 
-df <- ctx %>% 
+df.out <- ctx %>% 
   select(.ci, .ri, .y) %>%
   mutate(.group.colors = do.call(function(...) paste(..., sep='.'), ctx$select(ctx$colors)),
          .group.labels = do.call(function(...) paste(..., sep='.'), ctx$select(ctx$labels))) %>%
@@ -52,5 +52,8 @@ df <- ctx %>%
                    paired = paired,
                    conf.int = conf.int,
                    conf.level = conf.level)) %>%
-  ctx$addNamespace() %>%
+  ctx$addNamespace() 
+
+df.out %>%
   ctx$save()
+
