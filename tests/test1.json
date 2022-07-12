@@ -3,11 +3,11 @@
   "name": "test1",
   "namespace": "ds1",
   "inputDataUri": "test1_in.csv",
-  "outputDataUri": ["test1_out_1.csv", "test1_out_2.csv"],
+  "outputDataUri": ["test1_out_1.csv", "test1_out_2.csv", "test1_out_3.csv"],
   "columns": [
-    "Observation"
+    "Group"
   ],
-  "rows": [],
+  "rows": ["tableId"],
   "colors": [
     "Supergroup"
   ],
@@ -16,6 +16,6 @@
   ],
   "yAxis": "y_values",
   "xAxis": "",
-  "generatedOn": "07/12/2022 06:27:37 AM 2022",
+  "generatedOn": "07/12/2022 06:31:07 AM 2022",
   "version": ""
 }
