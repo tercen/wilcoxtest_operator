@@ -1,46 +1,50 @@
 {
   "name": "Wilcoxon Test",
   "description": "Calculates the difference between sets of pairs and analyzes these differences to establish if they are statistically significantly different from one another. There are two variants Rank Sum and Signed Rank.",
-  "tags": ["statistical testing", "test"],
-  "authors": ["tercen"],
-  "urls": ["https://github.com/tercen/wilcoxtest_operator"],
+  "tags": [
+    "statistical testing"
+  ],
+  "authors": [
+    "tercen"
+  ],
+  "urls": [
+    "https://github.com/tercen/wilcoxtest_operator"
+  ],
   "properties": [
     {
-    "kind": "EnumeratedProperty",
-    "name": "alternative",
-    "defaultValue": "two.sided",
-    "values": [
-      "two.sided",
-      "less",
-      "greater"
-    ],
-    "description": "A character string specifying the alternative hypothesis."
-  },
-  {
-    "kind": "BooleanProperty",
-    "name": "paired",
-    "defaultValue": false,
-    "description": "A logical variable indicating whether the observations are paired. If true, a label is expected from the Tercen projection to assign the pairs."
-  },
-  {
-    "kind": "DoubleProperty",
-    "name": "mu",
-    "defaultValue": 0.0,
-    "description": "A number indicating the true value of the mean (or difference in means if you are performing a two sample test)"
-  },
-  {
-    "kind": "BooleanProperty",
-    "name": "conf.int",
-    "defaultValue": true,
-    "description": "Compute confidence intervals"
-  },
-  {
-    "kind": "DoubleProperty",
-    "name": "conf.level",
-    "defaultValue": 0.95,
-    "description": "Confidence level of the interval."
-  }
+      "kind": "EnumeratedProperty",
+      "name": "alternative",
+      "defaultValue": "two.sided",
+      "values": [
+        "two.sided",
+        "less",
+        "greater"
+      ],
+      "description": "A character string specifying the alternative hypothesis."
+    },
+    {
+      "kind": "BooleanProperty",
+      "name": "paired",
+      "defaultValue": false,
+      "description": "A logical variable indicating whether the observations are paired. If true, a label is expected from the Tercen projection to assign the pairs."
+    },
+    {
+      "kind": "DoubleProperty",
+      "name": "mu",
+      "defaultValue": 0,
+      "description": "A number indicating the true value of the mean (or difference in means if you are performing a two sample test)"
+    },
+    {
+      "kind": "BooleanProperty",
+      "name": "conf.int",
+      "defaultValue": true,
+      "description": "Compute confidence intervals"
+    },
+    {
+      "kind": "DoubleProperty",
+      "name": "conf.level",
+      "defaultValue": 0.95,
+      "description": "Confidence level of the interval."
+    }
   ]
 }
-
-
