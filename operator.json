@@ -46,5 +46,54 @@
       "defaultValue": 0.95,
       "description": "Confidence level of the interval."
     }
-  ]
+  ],
+  "operatorSpec": {
+    "kind": "OperatorSpec",
+    "ontologyUri": "https://tercen.com/_ontology/tercen",
+    "ontologyVersion": "0.0.1",
+    "inputSpecs": [
+      {
+        "kind": "CrosstabSpec",
+        "metaFactors": [
+          {
+            "kind": "MetaFactor",
+            "name": "Groups",
+            "type": "",
+            "description": "Represents the groups to compare.",
+            "ontologyMapping": "group",
+            "crosstabMapping": "color",
+            "cardinality": "1..n",
+            "factors": []
+          },
+          {
+            "kind": "MetaFactor",
+            "name": "Pairing Labels",
+            "type": "",
+            "description": "Represents the pairing of observations.",
+            "ontologyMapping": "label",
+            "crosstabMapping": "label",
+            "cardinality": "1..n",
+            "factors": []
+          }
+        ],
+        "axis": [
+          {
+            "kind": "AxisSpec",
+            "metaFactors": [
+              {
+                "kind": "MetaFactor",
+                "name": "Measurement",
+                "type": "numeric",
+                "description": "Measurement values for the test.",
+                "ontologyMapping": "measurement",
+                "crosstabMapping": "y",
+                "cardinality": "1",
+                "factors": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }
