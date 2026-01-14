@@ -8,9 +8,11 @@ The `wilcoxtest` operator performs a Wilcoxon test on the data.
 
 Input projection|.
 ---|---
-`color`   | represents the groups to compare
 `y-axis`| measurement value
-`labels`   | represents the pairing
+`color`   | represents the groups to compare
+`labels`   | optional, represents the pairing for paired tests
+`row`   | optional, row stratification factor
+`column`   | optional, column stratification factor
 
 Input parameters|.
 ---|---
