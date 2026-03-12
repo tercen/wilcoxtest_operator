@@ -46,7 +46,7 @@
               {
                 "kind": "MetaFactor",
                 "name": "Measurement",
-                "type": "numeric",
+                "type": "double",
                 "description": "Values to test",
                 "ontologyMapping": "measurement",
                 "crosstabMapping": "y",
